@@ -1,0 +1,107 @@
+@import '../../../vars'
+
+$openHeight: 325px // height of the open mobile menu
+
+//@media screen and (max-width: $break-small)
+
+header
+  #menu-main
+    background: linear-gradient(darken($brandColor, 10%), lighten($brandColor, 10%))
+    #menu-toggle
+      position: fixed
+      top: 1rem
+      right: 1rem
+      display: none
+      cursor: pointer
+      svg
+        path
+          fill: #fff
+      @media screen and (max-width: $break-xsmall)
+        display: block
+    #menu-logo
+      padding: 1rem
+      max-width: 5rem
+      svg
+        width: 100%
+        path
+          fill: #fff
+    #menu-links
+      display: flex
+      @media screen and (max-width: $break-xsmall)
+        transition: all .3s
+        opacity: 0
+        pointer-events: none
+        display: block
+        position: fixed
+        top: 3rem
+        right: 1rem
+        padding: .5rem
+        background: $brandColor
+        border-radius: 0.2rem
+        z-index: 9999
+        &:before
+          position: absolute
+          top: -20px
+          right: 2px
+          content: ' '
+          width: 20px
+          height: 20px
+          background: $brandColor
+          clip-path: polygon(50% 64%, 0% 100%, 100% 100%)
+      a
+        flex: 1 1 auto
+        white-space: nowrap
+        text-align: center
+        border: 1ps solid #fff
+        font-family: $brandFont
+        text-decoration: none
+        display: block
+        color: #fff
+        padding: .5rem 1rem
+        background: $brandColor
+        transition: background 0.5s
+        &:hover
+          background: darken($brandColor, 10%)
+        &.active
+          background: darken($brandColor, 10%)
+        @media screen and (max-width: $break-xsmall)
+          border-radius: 0.2rem
+          flex: none
+    #menu-profile
+      position: absolute
+      top: 1rem
+      right: 1rem
+      font-size: 0.7rem
+      text-align: right
+      color: #fff
+      @media screen and (max-width: $break-xsmall)
+        right: 3.2rem
+      h3
+        font-size: 0.7rem
+        padding: 0
+        margin: 0
+      ul
+        list-style: none
+        padding: 0
+        margin: 0.5rem 0 0 0
+        li
+          float: left
+          padding: 0 0.5rem 0 0.5rem
+          border-right: 1px solid darken($brandColor, 10%)
+          &:last-child
+            padding: 0 0 0 0.5rem
+            border: none
+          a
+            display: block
+            color: #fff
+            text-decoration: none
+
+  #menu-loc
+    display: none
+
+  &.active
+    #menu-links
+      opacity: 1 !important
+      pointer-events: all !important
+      a
+        opacity: 1

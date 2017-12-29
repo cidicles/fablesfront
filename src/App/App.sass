@@ -1,0 +1,123 @@
+@import '../vars'
+
+body
+  background: #000
+  color: #fff
+  margin: 0
+  padding: 0
+
+.wrap
+  background: #000
+
+.link
+  cursor: pointer
+
+.section-heading
+  padding: 1rem
+  h1
+    font-size: 3rem
+    padding: 0
+    margin: 0
+    font-family: $brandFont
+    display: inline-block
+  p
+    padding: 0
+    margin: 0
+
+.pagination
+  display: flex
+  margin: 1rem
+  .page
+    display: block
+    flex: 1 1 auto
+    padding: 0.25rem
+    text-align: center
+    background: darken($brandColor, 15%)
+    cursor: pointer
+    &:first-child
+      border-radius: 0.3rem 0 0 0.3rem
+    &:last-child
+      border-radius: 0 0.3rem 0.3rem 0
+    &.active
+      background: darken($brandColor, 0%)
+      font-weight: bold
+
+.transports
+  display: flex
+  margin: 1rem
+  .transport
+    display: block
+    flex: 1 1 auto
+    padding: 0.25rem
+    text-align: center
+    background: darken($brandColor, 15%)
+    cursor: pointer
+    transition: background 0.7s
+    &:first-child
+      border-radius: 0.3rem 0 0 0.3rem
+    &:last-child
+      border-radius: 0 0.3rem 0.3rem 0
+    &:hover
+      background: darken($brandColor, 0%)
+      font-weight: bold
+
+.form
+  padding: 0.25rem 1rem
+  fieldset
+    padding: 0
+    border: 0
+    h3
+      padding: 0
+      margin: 0 0 0.25rem 0
+    textarea, select, input
+      width: 100%
+      box-sizing: border-box
+      border-radius: 0.25rem
+      border: 2px solid transparentize($brandColor, 1)
+      padding: 0.3rem
+      transition: border 0.4s
+      &:focus
+        outline: 0
+        border: 2px solid transparentize($brandColor, 0)
+
+.button-save
+  padding: 0.5rem 1rem
+  display: inline-block
+  box-sizing: border-box
+  border-radius: 0.25rem
+  font-weight: bold
+  border: 2px solid transparentize($brandColor, 1)
+  background: transparentize($brandColor, 0)
+  margin: 0.5rem 0 0 0
+  cursor: pointer
+  transition: background 0.4s
+  &:hover
+    background: 2px solid transparentize($brandColor, 0.4)
+
+.status
+  box-sizing: border-box
+  margin: 0.25rem 1rem
+  padding: 0.5rem
+  border-radius: 0.25rem
+  border: 1px solid transparentize($brandColor, 0.5)
+  background: transparentize($brandColor, 0.6)
+
+.posts
+  padding: 0.25rem 1rem
+  .post
+    a
+      border: 1px solid transparentize($brandColor, 0.7)
+      display: block
+      margin-bottom: 0.5rem
+      border-radius: 0.25rem
+      color: #fff
+      padding: 0.5rem
+      text-decoration: none
+    h2
+      padding: 0
+      margin: 0
+
+.grid
+  display: grid
+  &.two-col
+    grid-template-columns: 50% 50%
