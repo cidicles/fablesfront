@@ -9,26 +9,104 @@
     text-align: center
     animation: Pulse 1s infinite
 
+.phone
+  max-width: 420px
+  margin: 0 auto
+
+.status-bar
+  background: linear-gradient(darken($brandColor, 10%), lighten($brandColor, 10%))
+  padding: 0.5rem
+  margin-top: 2rem
+  position: relative
+  p, h1
+    padding: 0
+    margin: 0
+    text-align: center
+    font-size: 0.6rem
+  h1
+    font-family: $brandFont
+    font-size: 1rem
+  .status-back
+    position: absolute
+    top: 10px
+    left: 10px
+    font-size: 0.6rem
+    padding: 0.5rem
+    background: #fff
+    color: #000
+    text-decoration: none
+    border-radius: 0.25rem
+
+.message-screen
+  height: 480px
+  margin: 0 auto
+  overflow: hidden
+  background: url('./images/bg-message.jpg')
+  background-size: 100%
+  border-radius: 0
+  box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.44)
+  position: relative
+
 .messages
-  padding: 0.25rem 1rem
+  //display: flex
+  //align-items: center
+  //justify-content: flex-end
+  //flex-direction: column
+  //flex-wrap: nowrap
+  position: relative
+  height: 400px
+  overflow-y: scroll
+  overflow-x: hidden
+  padding-top: 1rem
   .message
+    width: calc(100% - 2rem)
+    box-sizing: border-box
+    //align-self: flex-end
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.67)
     background: #fff
     color: #000
     position: relative
-    padding: 0.25rem 0.5rem
+    padding: 0.5rem 0.5rem
     border-radius: 0.25rem
-    margin: 0 0 0.5rem 0
+    margin: 0 2rem 1rem 1rem
+    sup
+      font-size: 0.6rem
+      color: #ccc
+      display: block
+      margin-top: 0.25rem
     p
       padding: 0
       margin: 0
-    &:before
-      clip-path: polygon(100% 0, 0 0, 50% 36%)
-      content: ' '
-      position: absolute
-      width: 20px
-      height: 20px
-      background: #fff
-      bottom: -20px
+    img
+      width: 100%
+    &.left
+      width: calc(100% - 3rem)
+      margin-left: 2rem
+      background-color: #313131
+      color: #fff
+      &:before
+        clip-path: polygon(100% 0, 0 50%, 100% 100%)
+        content: ' '
+        position: absolute
+        width: 20px
+        height: 20px
+        background: #313131
+        left: -19px
+        top: 5px
+    &.right
+      width: calc(100% - 3rem)
+      margin-right: 2rem
+      background-color: #161616
+      color: #fff
+      &:before
+        clip-path: polygon(100% 50%, 0 0, 0 100%)
+        content: ' '
+        position: absolute
+        width: 20px
+        height: 20px
+        background: #161616
+        right: -19px
+        top: 5px
 
 .message-controls
   position: absolute
@@ -42,6 +120,59 @@
     &:hover
       path
         fill: darken($brandColor, 30%)
+
+.next-message
+  position: absolute
+  bottom: 1rem
+  left: 1rem
+  width: calc(100% - 2rem)
+  padding: 1rem
+  text-align: center
+  box-sizing: border-box
+  border-radius: 0.25rem
+  background: $brandColor
+  transition: background 0.5s
+  cursor: pointer
+  &:hover
+    background: darken($brandColor, 10%)
+
+.end-message
+  position: absolute
+  bottom: 1rem
+  left: 1rem
+  width: calc(100% - 2rem)
+  padding: 1rem
+  text-align: center
+  box-sizing: border-box
+  border-radius: 0.25rem
+  background: #fff
+  color: #000
+
+.user-menu
+  box-sizing: border-box
+  position: fixed
+  right: 0
+  background: darken($brandColor, 20%)
+  top: 7rem
+  padding: 1rem
+  width: 50vw
+  border-radius: 0 0 0 0.25rem
+  transition: all 0.4s
+  &.user-menu-active
+    transform: translate(50vw, 0)
+  .user-menu-toggle
+    box-sizing: border-box
+    position: absolute
+    left: -50px
+    top: 0
+    background: darken($brandColor, 20%)
+    border-radius: 0.25rem 0 0 0.25rem
+    padding: 0.5rem
+    cursor: pointer
+    svg
+      width: 35px
+      height: 35px
+
 
 @keyframes Pulse
   0%

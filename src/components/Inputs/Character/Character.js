@@ -24,6 +24,9 @@ class Character extends Component {
         });
       } else {
         success();
+        this.setState({
+          fableCharacter: ''
+        });
       }
     });
   }

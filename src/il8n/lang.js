@@ -48,11 +48,6 @@ export const lang = new LocalizedStrings( {
         },
 				{
 					type: 'internal',
-					href: '/videos',
-					display: 'Videos'
-        },
-				{
-					type: 'internal',
 					href: '/fables',
 					display: 'Fables'
         },
@@ -81,7 +76,12 @@ export const lang = new LocalizedStrings( {
 			title: 'Post',
 			subtag: 'You are now reading...',
 			newMessage: 'New Message',
-			newCharacter: 'New Character'
+			newCharacter: 'New Character',
+			messageCharacter: 'Message Character',
+			messageType: 'Message Type',
+			nextMessage: 'Tap or Click for Next Message',
+			endMessage: 'The End',
+			back: 'Back'
 		},
 		videos: {
 			title: 'Videos',

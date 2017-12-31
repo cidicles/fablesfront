@@ -1,9 +1,10 @@
 {
-  "main.css": "static/css/main.d2e0e7fa.css",
-  "main.css.map": "static/css/main.d2e0e7fa.css.map",
-  "main.js": "static/js/main.675c8217.js",
-  "main.js.map": "static/js/main.675c8217.js.map",
+  "main.css": "static/css/main.6b298c91.css",
+  "main.css.map": "static/css/main.6b298c91.css.map",
+  "main.js": "static/js/main.49cb18e0.js",
+  "main.js.map": "static/js/main.49cb18e0.js.map",
   "static\\media\\DDCHardware-Regular.eot": "static/media/DDCHardware-Regular.5e98598c.eot",
   "static\\media\\DDCHardware-Regular.ttf": "static/media/DDCHardware-Regular.76fc5bd4.ttf",
-  "static\\media\\DDCHardware-Regular.woff": "static/media/DDCHardware-Regular.5706662f.woff"
+  "static\\media\\DDCHardware-Regular.woff": "static/media/DDCHardware-Regular.5706662f.woff",
+  "static\\media\\bg-message.jpg": "static/media/bg-message.8d7b4628.jpg"
 }

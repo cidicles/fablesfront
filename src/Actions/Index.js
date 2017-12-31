@@ -3,6 +3,7 @@ export const CHANGE_ACTIVEVID = 'CHANGE_ACTIVEVID';
 export const CHANGE_POSTS = 'CHANGE_POSTS';
 export const CHANGE_POST = 'CHANGE_POST';
 export const CHANGE_USER = 'CHANGE_USER';
+export const CHANGE_LOCALSTATE = 'CHANGE_LOCALSTATE';
 
 export function changeLanguage(lang) {
   return {
@@ -36,5 +37,12 @@ export function changeUser(user) {
   return {
     type: CHANGE_USER,
     user
+  }
+}
+
+export function changeLocalState(localState) {
+  return {
+    type: CHANGE_LOCALSTATE,
+    localState
   }
 }

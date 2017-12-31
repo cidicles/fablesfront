@@ -9,15 +9,20 @@ class Message extends Component {
     super(props);
     this.state = {
       fableCharacter: 'Self',
+      fableType: 'text',
       ...props
     };
   }
   newFableMessage(){
-    let {fableMessage, fableCharacter} = this.state;
+    let {fableMessage, fableCharacter, fableType} = this.state;
     let {token} = this.props.user;
     let {post, success} = this.props;
     let feedUrl = `${apiBase}fable/messages/${post._id}`;
-    goFetch('post', feedUrl, { messages: fableMessage, character: fableCharacter }, token).then((res) => {
+    goFetch('post', feedUrl, {
+      messages: fableMessage,
+      character: fableCharacter,
+      type: fableType
+    }, token).then((res) => {
       if(res.error){
         console.log(res.message)
         this.setState({
@@ -41,6 +46,11 @@ class Message extends Component {
       fableCharacter: e.target.value
     });
   }
+  handleFableTypeChange(e) {
+    this.setState({
+      fableType: e.target.value
+    });
+  }
   getFableMessageForm(){
     let {post} = this.props;
     return(
@@ -51,11 +61,18 @@ class Message extends Component {
             value={this.state.fableMessage}
             onChange={this.handleFableMessageChange.bind(this)}
             />
+          <label>{lang.fable.messageCharacter}</label>
           <select onChange={this.handleFableCharacterChange.bind(this)}>
             <option defaultValue value='Self'>Self</option>
             {post.characters.map((item, index) => (
               <option value={item.name} key={`character-${index}`}>{item.name}</option>
             ))}
+          </select>
+          <label>{lang.fable.messageType}</label>
+          <select onChange={this.handleFableTypeChange.bind(this)}>
+            <option defaultValue value='text'>Text</option>
+            <option value='image'>Image (direct link only atm)</option>
+            <option value='video'>Video (youtube only atm)</option>
           </select>
         </fieldset>
         <div className='button-save' onClick={() => { this.newFableMessage() }} tabIndex="1">

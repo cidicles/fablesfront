@@ -27,7 +27,7 @@ class NewFable extends Component {
           status: res.error.message
         });
       } else {
-        this.context.router.push('/posts/' + res._id);
+        this.context.router.push('/fables/' + res._id);
       }
     });
   }

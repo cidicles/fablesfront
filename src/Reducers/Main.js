@@ -6,7 +6,10 @@ const initialState = loadState() || {
   activeVid: lang.videos.videos[0][0],
   posts: {},
   post: {},
-  user: {}
+  user: {},
+  localState: {
+    count: 0
+  }
 };
 
 const mainReducer = (state = {}, action) => {
@@ -31,6 +34,10 @@ const mainReducer = (state = {}, action) => {
     case 'CHANGE_USER':
       return Object.assign({}, state, {
         user: action.user
+      });
+    case 'CHANGE_LOCALSTATE':
+      return Object.assign({}, state, {
+        localState: action.localState
       });
     default:
       return initialState;

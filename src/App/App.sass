@@ -6,6 +6,40 @@ body
   margin: 0
   padding: 0
 
+::-webkit-scrollbar
+  width: 5px
+  height: 5px
+
+::-webkit-scrollbar-button
+  width: 0px
+  height: 0px
+
+::-webkit-scrollbar-thumb
+  background: #e1e1e1
+  border: 7px none #ffffff
+  border-radius: 50px
+
+::-webkit-scrollbar-thumb:hover
+  background: #ffffff
+
+::-webkit-scrollbar-thumb:active
+  background: #000000
+
+::-webkit-scrollbar-track
+  background: #666666
+  border: 11px none #ffffff
+  border-radius: 50px
+
+::-webkit-scrollbar-track:hover
+  background: #666666
+
+::-webkit-scrollbar-track:active
+  background: #333333
+
+::-webkit-scrollbar-corner
+  background: transparent
+
+
 .wrap
   background: #000
 
@@ -121,3 +155,28 @@ body
   display: grid
   &.two-col
     grid-template-columns: 50% 50%
+
+
+
+
+
+.example-enter
+  opacity: 0.01
+
+.example-enter.example-enter-active
+  opacity: 1
+  transition: opacity 500ms ease-in
+
+.example-leave
+  opacity: 1
+
+.example-leave.example-leave-active
+  opacity: 0.01
+  transition: opacity 300ms ease-in
+
+.example-appear
+  opacity: 0.01
+
+.example-appear.example-appear-active
+  opacity: 1
+  transition: opacity .5s ease-in

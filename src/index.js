@@ -15,7 +15,6 @@ import Reducers from './Reducers/Main';
 // Pages
 import App from './App/App';
 import Home from './components/Pages/Home/Home';
-import Videos from './components/Pages/Videos/Videos';
 import Fables from './components/Pages/Fables/Fables';
 import Fable from './components/Pages/Fable/Fable';
 import NoMatch from './components/Pages/NoMatch/NoMatch';
@@ -59,11 +58,6 @@ const routes = [
     path: '/',
     exact: true,
     component: Home
-  },
-  {
-    path: '/videos',
-    exact: true,
-    component: Videos
   },
   {
     path: '/login',
