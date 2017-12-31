@@ -27,9 +27,6 @@ class Fable extends Component {
   componentWillMount() {
     this.populatePost();
   }
-  componentDidMount() {
-    this.scrollToBottom();
-  }
   componentDidUpdate() {
     this.scrollToBottom();
   }
@@ -169,8 +166,7 @@ class Fable extends Component {
       }
     }
     messages.push(
-      <div style={{ float:"left", clear: "both" }} ref={(el) => { this.messagesEnd = el; }} key={`message-end`}>
-     </div>
+      <div style={{ float:"left", clear: "both" }} ref={(el) => { this.messagesEnd = el; }} key={`message-end`} />
    );
     return messages;
   }
